@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans">
+
+    <bean id="petStore" scope="singleton" class="org.litespring.service.v1.PetStoreService"></bean>
+
+    <bean id="petPro" scope="prototype" class="org.litespring.service.v1.PetPro" ></bean>
+
+    <bean id="petProError" scope="protype" class="org.litespring.service.v1.PetProError" ></bean>
+
+</beans>

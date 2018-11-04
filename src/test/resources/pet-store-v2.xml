@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans">
+
+    <bean id="petStore" scope="singleton" class="org.litespring.service.v1.PetStoreService">
+        <property name="petPro" ref="petPro"></property>
+        <property name="value" value="测试"></property>
+    </bean>
+
+    <bean id="petPro" scope="prototype" class="org.litespring.service.v1.PetPro" >
+
+    </bean>
+
+
+</beans>
