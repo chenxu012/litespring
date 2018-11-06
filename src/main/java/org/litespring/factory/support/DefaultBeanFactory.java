@@ -1,10 +1,7 @@
 package org.litespring.factory.support;
 
 import javafx.beans.property.SetProperty;
-import org.litespring.bean.BeanDefinition;
-import org.litespring.bean.BeanDefinitionRegistory;
-import org.litespring.bean.BeanDefintionValueResolver;
-import org.litespring.bean.PropertyValue;
+import org.litespring.bean.*;
 import org.litespring.configura.support.DefaultSingtonBeanRegistry;
 import org.litespring.factory.ConfigurableBeanFactory;
 import org.litespring.factory.support.exception.BeanCreateException;
@@ -102,12 +99,16 @@ public class DefaultBeanFactory extends DefaultSingtonBeanRegistry implements Co
                 BeanDefintionValueResolver beanDefintionValueResolver = new BeanDefintionValueResolver(this);
                 Object convertValue = beanDefintionValueResolver.resovlerValue(value);
 
+                //对于string类型的convertValue还需要进行转换
+                SimpleTypeConverter simpleTypeConverter = new SimpleTypeConverter();
+
                 //执行set方法
                 BeanInfo beanInfo = Introspector.getBeanInfo(bean.getClass());
                 PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
                 for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
                     if (propertyDescriptor.getName().equals(name)) {
-                        propertyDescriptor.getWriteMethod().invoke(bean, convertValue);
+                        Object endValue = simpleTypeConverter.converIfNecessary(convertValue, propertyDescriptor.getPropertyType());
+                        propertyDescriptor.getWriteMethod().invoke(bean, endValue);
                     }
                 }
             }

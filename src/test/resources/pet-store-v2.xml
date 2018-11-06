@@ -6,6 +6,8 @@
     <bean id="petStore" scope="singleton" class="org.litespring.service.v1.PetStoreService">
         <property name="petPro" ref="petPro"></property>
         <property name="value" value="测试"></property>
+        <property name="version" value="3"></property>
+        <property name="flag" value="true"></property>
     </bean>
 
     <bean id="petPro" scope="prototype" class="org.litespring.service.v1.PetPro" >

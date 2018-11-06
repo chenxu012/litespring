@@ -17,6 +17,8 @@ public class BeanTest {
 
         Assert.assertTrue(petStoreService.getPetPro() instanceof PetPro);
         Assert.assertTrue("测试".equals(petStoreService.getValue()));
+        Assert.assertTrue(3 == petStoreService.getVersion());
+        Assert.assertTrue(true == petStoreService.isFlag());
     }
 
 }
