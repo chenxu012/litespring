@@ -18,6 +18,7 @@ public class ApplicationContextTest {
         PetStoreService petStoreService = (PetStoreService) context.getBean("petStore");
 
         Assert.assertNotNull(petStoreService);
+        System.out.println(22);
 
     }
 
