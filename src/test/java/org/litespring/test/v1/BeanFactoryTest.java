@@ -58,6 +58,7 @@ public class BeanFactoryTest {
         }
         System.out.println(22);
         Assert.fail("Bean createtion Test error");
+        System.out.println(11);
     }
 
 
