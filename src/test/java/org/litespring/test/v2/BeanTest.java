@@ -21,6 +21,7 @@ public class BeanTest {
         Assert.assertTrue(true == petStoreService.isFlag());
         System.out.println("小狗");
         System.out.println("xiaoma");
+        System.out.println(22);
         System.out.println("11");
     }
 
