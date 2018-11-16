@@ -56,7 +56,7 @@ public class BeanFactoryTest {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
+        System.out.println(22);
         Assert.fail("Bean createtion Test error");
     }
 
