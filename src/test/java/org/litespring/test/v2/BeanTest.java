@@ -20,6 +20,7 @@ public class BeanTest {
         Assert.assertTrue(3 == petStoreService.getVersion());
         Assert.assertTrue(true == petStoreService.isFlag());
         System.out.println("小狗");
+        System.out.println("xiaoma");
     }
 
 }
