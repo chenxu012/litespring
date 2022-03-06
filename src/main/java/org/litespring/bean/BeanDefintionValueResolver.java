@@ -12,6 +12,7 @@ public class BeanDefintionValueResolver {
     }
 
     public Object resovlerValue(Object value) {
+        String ss = "4545";
         if (value != null) {
             if (value instanceof RunTimeBeanRenference) {
                 return defaultBeanFactory.getBean(((RunTimeBeanRenference) value).getBeanName());
